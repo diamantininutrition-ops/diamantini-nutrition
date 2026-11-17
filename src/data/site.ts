@@ -8,6 +8,7 @@ export const PHONE_TEL = "+33782593110";
 
 export const nav = [
   { href: "/#specialites", label: "Spécialités" },
+  { href: "/sante-au-travail", label: "Santé au travail" },
   { href: "/#parcours", label: "Parcours" },
   { href: "/#methode", label: "Méthode" },
   { href: "/#consultations", label: "Consultations" },

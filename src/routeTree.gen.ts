@@ -16,6 +16,7 @@ import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as MentionslegalesRouteImport } from './routes/mentionslegales'
 import { Route as PolitiqueDeConfidentialiteRouteImport } from './routes/politique-de-confidentialite'
 import { Route as PolitiquedeconfidentialiteRouteImport } from './routes/politiquedeconfidentialite'
+import { Route as SanteAuTravailRouteImport } from './routes/sante-au-travail'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -54,6 +55,11 @@ const PolitiquedeconfidentialiteRoute =
     path: '/politiquedeconfidentialite',
     getParentRoute: () => rootRouteImport,
   } as any)
+const SanteAuTravailRoute = SanteAuTravailRouteImport.update({
+  id: '/sante-au-travail',
+  path: '/sante-au-travail',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -63,6 +69,7 @@ export interface FileRoutesByFullPath {
   '/mentionslegales': typeof MentionslegalesRoute
   '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/politiquedeconfidentialite': typeof PolitiquedeconfidentialiteRoute
+  '/sante-au-travail': typeof SanteAuTravailRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -72,6 +79,7 @@ export interface FileRoutesByTo {
   '/mentionslegales': typeof MentionslegalesRoute
   '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/politiquedeconfidentialite': typeof PolitiquedeconfidentialiteRoute
+  '/sante-au-travail': typeof SanteAuTravailRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -82,6 +90,7 @@ export interface FileRoutesById {
   '/mentionslegales': typeof MentionslegalesRoute
   '/politique-de-confidentialite': typeof PolitiqueDeConfidentialiteRoute
   '/politiquedeconfidentialite': typeof PolitiquedeconfidentialiteRoute
+  '/sante-au-travail': typeof SanteAuTravailRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -93,6 +102,7 @@ export interface FileRouteTypes {
     | '/mentionslegales'
     | '/politique-de-confidentialite'
     | '/politiquedeconfidentialite'
+    | '/sante-au-travail'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -102,6 +112,7 @@ export interface FileRouteTypes {
     | '/mentionslegales'
     | '/politique-de-confidentialite'
     | '/politiquedeconfidentialite'
+    | '/sante-au-travail'
   id:
     | '__root__'
     | '/'
@@ -111,6 +122,7 @@ export interface FileRouteTypes {
     | '/mentionslegales'
     | '/politique-de-confidentialite'
     | '/politiquedeconfidentialite'
+    | '/sante-au-travail'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -121,6 +133,7 @@ export interface RootRouteChildren {
   MentionslegalesRoute: typeof MentionslegalesRoute
   PolitiqueDeConfidentialiteRoute: typeof PolitiqueDeConfidentialiteRoute
   PolitiquedeconfidentialiteRoute: typeof PolitiquedeconfidentialiteRoute
+  SanteAuTravailRoute: typeof SanteAuTravailRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PolitiquedeconfidentialiteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/sante-au-travail': {
+      id: '/sante-au-travail'
+      path: '/sante-au-travail'
+      fullPath: '/sante-au-travail'
+      preLoaderRoute: typeof SanteAuTravailRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -185,6 +205,7 @@ const rootRouteChildren: RootRouteChildren = {
   MentionslegalesRoute: MentionslegalesRoute,
   PolitiqueDeConfidentialiteRoute: PolitiqueDeConfidentialiteRoute,
   PolitiquedeconfidentialiteRoute: PolitiquedeconfidentialiteRoute,
+  SanteAuTravailRoute: SanteAuTravailRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

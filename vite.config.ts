@@ -176,6 +176,7 @@ export default defineConfig(({ command, isPreview }) => ({
         { path: "/nutrition-du-sport" },
         { path: "/maladies-chroniques-et-aigues" },
         { path: "/approche-dietetique-et-tca" },
+        { path: "/sante-au-travail" },
         { path: "/mentions-legales" },
         { path: "/politique-de-confidentialite" },
         { path: "/cookies" },
