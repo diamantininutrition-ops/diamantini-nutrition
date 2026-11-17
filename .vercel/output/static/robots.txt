@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://diamantini-nutrition.fr/sitemap.xml

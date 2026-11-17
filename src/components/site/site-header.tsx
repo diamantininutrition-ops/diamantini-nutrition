@@ -13,10 +13,11 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <a href="/" className="focus-ring shrink-0 rounded-md" onClick={() => setOpen(false)}>
           <img
-            src="/media/logo-full.png"
+            src="/media/logo-full.webp"
             alt="DIAMANTINI Nutrition"
             width={1270}
             height={700}
+            decoding="async"
             className="h-12 w-auto md:h-14"
           />
         </a>

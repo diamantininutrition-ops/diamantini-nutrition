@@ -25,7 +25,7 @@ jobs:
       - run: npx vite build
         env:
           VITE_PUBLIC_HOSTNAME: diamantini-nutrition.fr
-      - run: cp .vercel/output/static/index.html .vercel/output/static/404.html
+          VITE_GROK_EXTENSIONS: "0"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

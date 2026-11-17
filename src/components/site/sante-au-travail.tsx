@@ -105,10 +105,11 @@ export function SanteAuTravailPage() {
               </a>
             </div>
             <img
-              src="/media/logo-mark.png"
+              src="/media/logo-mark.webp"
               alt="DIAMANTINI Nutrition"
               width={635}
               height={800}
+              decoding="async"
               className="mx-auto w-52 sm:w-64 lg:w-full"
             />
           </div>
@@ -346,7 +347,7 @@ export function SanteAuTravailPage() {
 
         <section className="bg-paper px-5 py-14 sm:px-6 lg:py-20">
           <div className="mx-auto max-w-6xl">
-            <img src="/media/logo-mark.png" alt="" width={635} height={800} className="mx-auto h-28 w-auto sm:h-36 lg:h-44" />
+            <img src="/media/logo-mark.webp" alt="" width={635} height={800} loading="lazy" decoding="async" className="mx-auto h-28 w-auto sm:h-36 lg:h-44" />
             <h2 className="mt-4 text-center text-3xl font-medium sm:text-4xl lg:text-5xl">Les Questions Fréquentes</h2>
             <div className="mt-10 grid items-start gap-4 lg:grid-cols-2 lg:gap-5">
               {workFaqs.map((column) => (

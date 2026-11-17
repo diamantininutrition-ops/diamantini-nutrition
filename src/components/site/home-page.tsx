@@ -75,6 +75,8 @@ function Portrait() {
       alt="Valentin Diamantini, diététicien-nutritionniste, souriant en chemise blanche, les bras croisés"
       width={1126}
       height={1122}
+      fetchPriority="high"
+      decoding="async"
       className="relative z-10 mx-auto w-full max-w-sm lg:max-w-lg"
     />
   );
@@ -136,6 +138,8 @@ function Story() {
             alt="Portrait de Valentin Diamantini"
             width={960}
             height={720}
+            loading="lazy"
+            decoding="async"
             className="h-56 w-full object-cover object-top sm:h-64 lg:h-60"
           />
         </div>
@@ -202,6 +206,8 @@ function Method() {
         alt=""
         width={720}
         height={832}
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute top-28 left-0 hidden w-44 lg:block xl:left-4 xl:w-56"
       />
       <img
@@ -209,6 +215,8 @@ function Method() {
         alt=""
         width={700}
         height={1000}
+        loading="lazy"
+        decoding="async"
         className="pointer-events-none absolute top-20 right-0 hidden w-48 lg:block xl:right-2 xl:w-60"
       />
       <div className="relative mx-auto max-w-3xl px-5 py-12 sm:px-6 lg:py-16">
@@ -278,6 +286,8 @@ function Method() {
             alt="Assiette illustrée de légumes, fruits et céréales"
             width={720}
             height={530}
+            loading="lazy"
+            decoding="async"
             className="mx-auto w-full max-w-[16rem] lg:max-w-[18rem]"
           />
         </div>
@@ -371,10 +381,12 @@ function Pricing() {
           </p>
           <h3 className="mt-1 text-lg font-bold">Nutrition du sportif</h3>
           <img
-            src="/media/strongdiet.png"
+            src="/media/strongdiet.webp"
             alt="STRONGDIET"
             width={640}
             height={482}
+            loading="lazy"
+            decoding="async"
             className="mx-auto mt-2 h-16 w-auto md:h-[4.5rem]"
           />
           <p className="mt-3 text-base font-bold italic text-[#e0c15a] md:text-lg">
@@ -567,10 +579,12 @@ function Faq({ open, setOpen }: { open: number | null; setOpen: (n: number | nul
     <section id="faq" className="scroll-mt-24 bg-paper px-5 py-14 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <img
-          src="/media/logo-mark.png"
+          src="/media/logo-mark.webp"
           alt=""
           width={635}
           height={800}
+          loading="lazy"
+          decoding="async"
           className="mx-auto h-28 w-auto sm:h-36 lg:h-44"
         />
         <h2 className="mt-4 text-center text-3xl font-medium sm:text-4xl lg:text-5xl">Les Questions Fréquentes</h2>

@@ -223,6 +223,7 @@ function Portrait({ soft, src, alt, shift = "" }: { soft: string; src?: string; 
         alt={src ? (alt ?? "Illustration") : "Valentin Diamantini, diététicien-nutritionniste"}
         width={911}
         height={1400}
+        decoding="async"
         className={`relative z-0 w-full ${src ? "aspect-[911/1400] object-contain" : ""}`}
       />
       <svg viewBox="0 0 390 180" preserveAspectRatio="none" className="pointer-events-none absolute inset-x-[-12%] bottom-0 z-10 h-[30%] w-[124%] lg:hidden" aria-hidden>
@@ -335,7 +336,7 @@ export function ServicePage({ page }: { page: ServicePageData }) {
                   <p className={`${leadClass} ${hero.emphasis ? "font-bold italic" : ""}`}>{hero.lead}</p>
                 </>
               ) : (
-                <h1 className={`mt-2 ${titleClass}`}>{page.h1}</h1>
+                <h2 className={`mt-2 ${titleClass}`}>{page.h1}</h2>
               )}
               <div className="service-copy mt-5 max-w-[68ch] space-y-4 text-base leading-7 text-muted lg:text-[17px]">
                 {intro.map((block, index) =>
@@ -402,6 +403,8 @@ export function ServicePage({ page }: { page: ServicePageData }) {
               alt="Assiette de légumes, fruits et céréales"
               width={720}
               height={530}
+              loading="lazy"
+              decoding="async"
               className="mx-auto w-full max-w-lg rounded-[2.5rem]"
             />
           </figure>
