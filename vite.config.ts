@@ -166,7 +166,21 @@ export default defineConfig(({ command, isPreview }) => ({
     // PWA head + ?install=1 tutorial page; runs before Start/Nitro.
     grokPwaPlugin(),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({
+      prerender: { enabled: true, crawlLinks: true },
+      pages: [
+        { path: "/" },
+        { path: "/perte-de-poids" },
+        { path: "/troubles-digestifs" },
+        { path: "/equilibre-alimentaire" },
+        { path: "/nutrition-du-sport" },
+        { path: "/maladies-chroniques-et-aigues" },
+        { path: "/approche-dietetique-et-tca" },
+        { path: "/mentions-legales" },
+        { path: "/politique-de-confidentialite" },
+        { path: "/cookies" },
+      ],
+    }),
     ...(command === "build" || isPreview
       ? [
           nitro({
