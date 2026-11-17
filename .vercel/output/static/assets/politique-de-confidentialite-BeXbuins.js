@@ -1,0 +1,1 @@
+import{r as e}from"./legal-page-Cy1dKeIG.js";var t=e;export{t as component};

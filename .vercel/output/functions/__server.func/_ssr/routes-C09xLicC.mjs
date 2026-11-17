@@ -1,8 +1,8 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { J as require_react, q as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Minus, i as Plus, l as ChevronRight, u as ChevronLeft } from "../_libs/lucide-react.mjs";
-import { a as faqs, i as SiteHeader, n as STRONGDIET, o as reviews, r as SiteFooter, s as specialties, t as RDV } from "./site-header-OyiDNyP4.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-J5JLA7WE.js
+import { a as faqs, i as SiteHeader, n as STRONGDIET, o as reviews, r as SiteFooter, s as specialties, t as RDV } from "./site-header-Cma7Ja4j.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-C09xLicC.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var offers = [
@@ -80,8 +80,8 @@ function Hero() {
 }
 function Portrait() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-		src: "/media/hero-badge.webp",
-		alt: "Valentin Diamantini, diététicien-nutritionniste, souriant en chemise blanche, les bras croisés",
+		src: "/media/valentin-diamantini-dieteticien-metz.webp",
+		alt: "Valentin Diamantini, diététicien nutritionniste à Metz",
 		width: 1126,
 		height: 1122,
 		fetchPriority: "high",
@@ -152,8 +152,8 @@ function Story() {
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mx-auto w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-						src: "/media/story.jpg",
-						alt: "Portrait de Valentin Diamantini",
+						src: "/media/valentin-diamantini-portrait.jpg",
+						alt: "Portrait de Valentin Diamantini, diététicien nutritionniste",
 						width: 960,
 						height: 720,
 						loading: "lazy",
@@ -340,8 +340,8 @@ function Method() {
 						className: "space-y-5 text-left text-base leading-7 text-muted lg:text-[17px]",
 						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Grâce à Doctolib, vous pouvez planifier votre visite en quelques clics, à un moment qui vous convient." }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", { children: "Lorsque vous franchissez la porte de mon cabinet, vous êtes accueilli dans un environnement chaleureux et rassurant dans lequel vous pourrez parler librement de votre parcours et de vos objectifs en nutrition et diététique. Je vous accompagnerai tout au long de votre parcours aussi bien pendant les séances qu’entre deux, où je me tiendrai à votre disposition si besoin." })]
 					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-						src: "/media/plate.webp",
-						alt: "Assiette illustrée de légumes, fruits et céréales",
+						src: "/media/assiette-equilibree.webp",
+						alt: "Assiette équilibrée de légumes, fruits et céréales",
 						width: 720,
 						height: 530,
 						loading: "lazy",
@@ -489,8 +489,8 @@ function Pricing() {
 							children: "Nutrition du sportif"
 						}),
 						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/media/strongdiet.webp",
-							alt: "STRONGDIET",
+							src: "/media/strongdiet-logo.webp",
+							alt: "StrongDiet, nutrition du sport",
 							width: 640,
 							height: 482,
 							loading: "lazy",
@@ -745,7 +745,7 @@ function Faq({ open, setOpen }) {
 			className: "mx-auto max-w-6xl",
 			children: [
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-					src: "/media/logo-mark.webp",
+					src: "/media/diamantini-nutrition-symbole.webp",
 					alt: "",
 					width: 635,
 					height: 800,

@@ -1,9 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { HomePage } from "@/components/site/home-page";
 
-const TITLE = "Valentin Diamantini — Diététicien Nutritionniste à Metz";
+const TITLE = "Diététicien nutritionniste à Metz | Diamantini Nutrition";
 const DESCRIPTION =
-  "Cabinet de diététique de Valentin Diamantini à Metz. Diététique comportementale, perte de poids, nutrition du sport, troubles digestifs. Consultation 60€, au cabinet ou en téléconsultation.";
+  "Valentin Diamantini, diététicien nutritionniste à Metz : perte de poids, troubles digestifs, TCA. Consultation 60 €, au cabinet ou en téléconsultation.";
+const OG_TITLE = "Diamantini Nutrition, diététicien nutritionniste à Metz";
+const OG_DESCRIPTION =
+  "Suivi diététique personnalisé à Metz, au cabinet ou en téléconsultation. Rendez-vous en ligne sur Doctolib.";
 const URL = "https://diamantini-nutrition.fr/";
 
 const cabinet = {
@@ -14,7 +17,7 @@ const cabinet = {
   alternateName: "Valentin Diamantini, diététicien nutritionniste à Metz",
   url: URL,
   image: "https://diamantini-nutrition.fr/og.jpg",
-  logo: "https://diamantini-nutrition.fr/media/logo-full.png",
+  logo: "https://diamantini-nutrition.fr/media/diamantini-nutrition-logo.png",
   telephone: "+33782593110",
   email: "diamantini.nutrition@gmail.com",
   priceRange: "60 €",
@@ -46,13 +49,17 @@ export const Route = createFileRoute("/")({
   head: () => ({
     links: [{ rel: "canonical", href: URL }],
     meta: [
-      { property: "og:title", content: TITLE },
-      { property: "og:description", content: DESCRIPTION },
+      { title: TITLE },
+      { name: "description", content: DESCRIPTION },
+      { property: "og:title", content: OG_TITLE },
+      { property: "og:description", content: OG_DESCRIPTION },
       { property: "og:type", content: "website" },
       { property: "og:url", content: URL },
       { property: "og:image", content: "https://diamantini-nutrition.fr/og.jpg" },
       { property: "og:locale", content: "fr_FR" },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:title", content: OG_TITLE },
+      { name: "twitter:description", content: OG_DESCRIPTION },
     ],
     scripts: [
       { type: "application/ld+json", children: JSON.stringify(cabinet) },

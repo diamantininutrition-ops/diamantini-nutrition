@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { J as require_react, q as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { o as Menu, t as X } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/site-header-OyiDNyP4.js
+//#region node_modules/.nitro/vite/services/ssr/assets/site-header-Cma7Ja4j.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var RDV = "https://www.doctolib.fr/dieteticien/metz/valentin-diamantini/booking/specialities";
@@ -464,8 +464,8 @@ function SiteHeader() {
 						className: "focus-ring shrink-0 rounded-md",
 						onClick: () => setOpen(false),
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/media/logo-full.webp",
-							alt: "DIAMANTINI Nutrition",
+							src: "/media/diamantini-nutrition-logo.webp",
+							alt: "Diamantini Nutrition",
 							width: 1270,
 							height: 700,
 							decoding: "async",

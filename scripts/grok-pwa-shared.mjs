@@ -388,11 +388,23 @@ function stripGrokExtensionsScript(html) {
   );
 }
 
+const PAGE_SHARE_KEYS = new Set([
+  "og:title",
+  "og:description",
+  "og:type",
+  "og:url",
+  "og:site_name",
+  "twitter:title",
+  "twitter:description",
+]);
+
 export function stripShareMetaTags(html) {
   return String(html).replace(/<meta\b[^>]*>/gi, (tag) => {
     const attrs = [...tag.matchAll(/\b(?:property|name)\s*=\s*["']([^"']+)["']/gi)];
     for (const match of attrs) {
-      if (SHARE_META_KEYS.has(String(match[1]).toLowerCase())) return "";
+      const key = String(match[1]).toLowerCase();
+      if (PAGE_SHARE_KEYS.has(key)) return tag;
+      if (SHARE_META_KEYS.has(key)) return "";
     }
     return tag;
   });
@@ -448,6 +460,12 @@ export function injectGrokPwaHead(html, ctx = {}) {
   let next = stripShareMetaTags(html);
   if (!readGrokExtensionsEnabled()) next = stripGrokExtensionsScript(next);
 
+  const ogTags = grokOgHeadTags({ host, appName, site, documentTitle, cwd }).filter((tag) => {
+    const key = tag.match(/\b(?:property|name)="([^"]+)"/i)?.[1]?.toLowerCase();
+    if (!key) return true;
+    return !next.toLowerCase().includes(`property="${key}"`) && !next.toLowerCase().includes(`name="${key}"`);
+  });
+
   const missing = grokPwaHeadTags(appName)
     .filter(([key]) => {
       if (key === "manifest") return !next.includes('href="/__grok/manifest.webmanifest"');
@@ -456,10 +474,7 @@ export function injectGrokPwaHead(html, ctx = {}) {
     })
     .map(([, tag]) => tag);
 
-  next = insertAfterHeadOpen(
-    next,
-    grokOgHeadTags({ host, appName, site, documentTitle, cwd }).join(""),
-  );
+  next = insertAfterHeadOpen(next, ogTags.join(""));
 
   if (readGrokExtensionsEnabled() && !next.includes("/grok-app-builder/extensions.js")) {
     missing.push(...grokExtensionsHeadTags(projectId));

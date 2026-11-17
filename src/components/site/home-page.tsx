@@ -71,8 +71,8 @@ function Hero() {
 function Portrait() {
   return (
     <img
-      src="/media/hero-badge.webp"
-      alt="Valentin Diamantini, diététicien-nutritionniste, souriant en chemise blanche, les bras croisés"
+      src="/media/valentin-diamantini-dieteticien-metz.webp"
+      alt="Valentin Diamantini, diététicien nutritionniste à Metz"
       width={1126}
       height={1122}
       fetchPriority="high"
@@ -134,8 +134,8 @@ function Story() {
       <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 pt-12 sm:px-6 lg:grid-cols-[280px_1fr] lg:gap-12 lg:pt-16">
         <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none">
           <img
-            src="/media/story.jpg"
-            alt="Portrait de Valentin Diamantini"
+            src="/media/valentin-diamantini-portrait.jpg"
+            alt="Portrait de Valentin Diamantini, diététicien nutritionniste"
             width={960}
             height={720}
             loading="lazy"
@@ -282,8 +282,8 @@ function Method() {
             </p>
           </div>
           <img
-            src="/media/plate.webp"
-            alt="Assiette illustrée de légumes, fruits et céréales"
+            src="/media/assiette-equilibree.webp"
+            alt="Assiette équilibrée de légumes, fruits et céréales"
             width={720}
             height={530}
             loading="lazy"
@@ -381,8 +381,8 @@ function Pricing() {
           </p>
           <h3 className="mt-1 text-lg font-bold">Nutrition du sportif</h3>
           <img
-            src="/media/strongdiet.webp"
-            alt="STRONGDIET"
+            src="/media/strongdiet-logo.webp"
+            alt="StrongDiet, nutrition du sport"
             width={640}
             height={482}
             loading="lazy"
@@ -579,7 +579,7 @@ function Faq({ open, setOpen }: { open: number | null; setOpen: (n: number | nul
     <section id="faq" className="scroll-mt-24 bg-paper px-5 py-14 sm:px-6 lg:py-20">
       <div className="mx-auto max-w-6xl">
         <img
-          src="/media/logo-mark.webp"
+          src="/media/diamantini-nutrition-symbole.webp"
           alt=""
           width={635}
           height={800}

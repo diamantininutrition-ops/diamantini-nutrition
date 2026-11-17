@@ -1,8 +1,8 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { J as require_react, q as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Minus, c as Cog, i as Plus, r as Star, s as Heart } from "../_libs/lucide-react.mjs";
-import { i as SiteHeader, r as SiteFooter } from "./site-header-OyiDNyP4.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/sante-au-travail-CY38sgap.js
+import { i as SiteHeader, r as SiteFooter } from "./site-header-Cma7Ja4j.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/sante-au-travail-IVxB1Drs.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function NutriCorp({ className = "" }) {
@@ -120,8 +120,8 @@ function SanteAuTravailPage() {
 								children: "Prendre contact"
 							})
 						] }), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-							src: "/media/logo-mark.webp",
-							alt: "DIAMANTINI Nutrition",
+							src: "/media/diamantini-nutrition-symbole.webp",
+							alt: "",
 							width: 635,
 							height: 800,
 							decoding: "async",
@@ -518,7 +518,7 @@ function SanteAuTravailPage() {
 						className: "mx-auto max-w-6xl",
 						children: [
 							/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-								src: "/media/logo-mark.webp",
+								src: "/media/diamantini-nutrition-symbole.webp",
 								alt: "",
 								width: 635,
 								height: 800,

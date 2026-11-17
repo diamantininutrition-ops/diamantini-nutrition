@@ -167,7 +167,13 @@ export default defineConfig(({ command, isPreview }) => ({
     grokPwaPlugin(),
     tailwindcss(),
     tanstackStart({
-      prerender: { enabled: true, crawlLinks: true },
+      prerender: {
+        enabled: true,
+        crawlLinks: true,
+        // Hash links (/#contact, /#avis…) resolve to / and were written
+        // concurrently onto index.html, sometimes leaving it empty.
+        filter: ({ path }) => !/[?#]/.test(path),
+      },
       pages: [
         { path: "/" },
         { path: "/perte-de-poids" },

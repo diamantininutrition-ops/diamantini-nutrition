@@ -215,8 +215,8 @@ function Portrait({ soft, src, alt, shift = "" }: { soft: string; src?: string; 
   return (
     <div className={`relative mx-auto w-[17.5rem] max-w-full sm:w-[20rem] lg:ml-auto lg:mr-0 lg:w-[22rem] ${shift}`}>
       <img
-        src={src ?? "/media/portrait.webp"}
-        alt={src ? (alt ?? "Illustration") : "Valentin Diamantini, diététicien-nutritionniste"}
+        src={src ?? "/media/valentin-diamantini-dieteticien-nutritionniste.webp"}
+        alt={alt ?? "Valentin Diamantini, diététicien nutritionniste"}
         width={911}
         height={1400}
         decoding="async"
@@ -361,19 +361,23 @@ export function ServicePage({ page }: { page: ServicePageData }) {
               soft={tone.soft}
               src={
                 page.slug === "perte-de-poids"
-                  ? "/media/perte-silhouette.webp"
+                  ? "/media/illustration-perte-de-poids.webp"
                   : page.slug === "troubles-digestifs"
-                    ? "/media/digestifs-intestin-2.webp"
+                    ? "/media/illustration-troubles-digestifs.webp"
                     : page.slug === "maladies-chroniques-et-aigues"
-                      ? "/media/maladies-coeur.webp"
+                      ? "/media/illustration-maladies-chroniques.webp"
                       : undefined
               }
               alt={
-                page.slug === "troubles-digestifs"
-                  ? "Illustration d’un intestin pour les troubles digestifs"
-                  : page.slug === "maladies-chroniques-et-aigues"
-                    ? "Illustration d’un cœur tenu dans une main pour les maladies chroniques"
-                    : "Illustration d’une silhouette pour la perte de poids"
+                page.slug === "perte-de-poids"
+                  ? "Illustration d'une silhouette, perte de poids"
+                  : page.slug === "troubles-digestifs"
+                    ? "Illustration de l'intestin, troubles digestifs"
+                    : page.slug === "maladies-chroniques-et-aigues"
+                      ? "Illustration d'un cœur dans une main, maladies chroniques"
+                      : page.slug === "equilibre-alimentaire"
+                        ? "Valentin Diamantini, diététicien nutritionniste à Metz"
+                        : "Valentin Diamantini, diététicien nutritionniste"
               }
               shift={
                 page.slug === "perte-de-poids"
@@ -408,8 +412,8 @@ export function ServicePage({ page }: { page: ServicePageData }) {
         {page.slug === "equilibre-alimentaire" ? (
           <figure className="bg-mint px-5 py-12 sm:px-6">
             <img
-              src="/media/plate.webp"
-              alt="Assiette de légumes, fruits et céréales"
+              src="/media/assiette-equilibree.webp"
+              alt="Assiette équilibrée de légumes, fruits et céréales"
               width={720}
               height={530}
               loading="lazy"

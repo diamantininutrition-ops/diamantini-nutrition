@@ -3,9 +3,9 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { PreviewHostBridge } from "@/components/preview-host-bridge";
 import appCss from "../styles.css?url";
 
-const TITLE = "Valentin Diamantini — Diététicien Nutritionniste à Metz";
+const TITLE = "Diététicien nutritionniste à Metz | Diamantini Nutrition";
 const DESCRIPTION =
-  "Cabinet de diététique de Valentin Diamantini à Metz. Diététique comportementale, perte de poids, nutrition du sport, troubles digestifs. Consultation 60€, au cabinet ou en téléconsultation.";
+  "Valentin Diamantini, diététicien nutritionniste à Metz : perte de poids, troubles digestifs, TCA. Consultation 60 €, au cabinet ou en téléconsultation.";
 
 export const Route = createRootRoute({
   head: () => ({
@@ -14,6 +14,7 @@ export const Route = createRootRoute({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: TITLE },
       { name: "description", content: DESCRIPTION },
+      { property: "og:site_name", content: "Diamantini Nutrition" },
       { name: "theme-color", content: "#719a54" },
     ],
     links: [
