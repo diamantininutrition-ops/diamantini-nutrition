@@ -1,8 +1,7 @@
 import { useState } from "react";
-import { Cog, Facebook, Heart, Instagram, Linkedin, Minus, Plus, Star } from "lucide-react";
+import { Cog, Heart, Minus, Plus, Star } from "lucide-react";
 import { SiteFooter } from "@/components/site/site-footer";
 import { SiteHeader } from "@/components/site/site-header";
-import { socials } from "@/data/site";
 
 function NutriCorp({ className = "" }: { className?: string }) {
   return (
@@ -79,8 +78,6 @@ const workFaqs = [
     },
   ],
 ];
-
-const socialIcons = [Facebook, Instagram, Linkedin];
 
 export function SanteAuTravailPage() {
   const [openFaq, setOpenFaq] = useState<string | null>(null);
@@ -345,37 +342,6 @@ export function SanteAuTravailPage() {
           <p className="bg-[#f3e34b] px-5 py-5 text-center text-xl font-semibold text-[#d32f2f] sm:text-2xl">
             Prêt à placer la santé et le bien-être de vos équipes au cœur de votre entreprise ?
           </p>
-          <div className="bg-olive px-5 py-14 sm:px-6 lg:py-16">
-            <div className="mx-auto max-w-6xl text-paper">
-                <h2 className="text-3xl text-[#f3e34b]">Adresse</h2>
-                <p className="mt-2">5 rue Xavier Roussel, 57050, Metz</p>
-                <h2 className="mt-8 text-3xl text-[#f3e34b]">Téléphone</h2>
-                <p className="mt-2">
-                  <a href="tel:+33782593110" className="focus-ring">
-                    07.82.59.31.10.
-                  </a>
-                </p>
-                <h2 className="mt-8 text-3xl text-[#f3e34b]">Email</h2>
-                <p className="mt-2">
-                  <a href="mailto:diamantini.nutrition@gmail.com" className="focus-ring">
-                    diamantini.nutrition@gmail.com
-                  </a>
-                </p>
-                <h2 className="mt-8 text-3xl text-[#f3e34b]">Réseaux sociaux</h2>
-                <ul className="mt-3 flex gap-4">
-                  {socials.map((item, index) => {
-                    const Icon = socialIcons[index] ?? Facebook;
-                    return (
-                      <li key={item.href}>
-                        <a href={item.href} target="_blank" rel="noreferrer" className="focus-ring" aria-label={item.label}>
-                          <Icon className="size-6" aria-hidden />
-                        </a>
-                      </li>
-                    );
-                  })}
-                </ul>
-            </div>
-          </div>
         </section>
 
         <section className="bg-paper px-5 py-14 sm:px-6 lg:py-20">
