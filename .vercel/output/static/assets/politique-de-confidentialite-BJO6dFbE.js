@@ -1,0 +1,1 @@
+import{r as e}from"./legal-page-cPgjotJN.js";var t=e;export{t as component};

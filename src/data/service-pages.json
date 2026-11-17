@@ -660,8 +660,8 @@
     "slug": "nutrition-du-sport",
     "moduleId": "nutrition-sport",
     "crumb": "Nutrition du sport",
-    "title": "Diététicien du sport à Metz | Valentin Diamantini",
-    "description": "Adaptez votre alimentation à vos entraînements, à votre récupération et à vos objectifs. Consultation en nutrition du sport à Metz et découverte de StrongDiet.",
+    "title": "Nutrition et sport à Metz | Diamantini Nutrition",
+    "description": "Vous faites du sport et voulez manger mieux au quotidien ? Premiers conseils à Metz, et suivi spécialisé en nutrition du sport avec StrongDiet.",
     "ctaAfter": "methode",
     "links": [
       [
@@ -685,7 +685,7 @@
         "/#contact"
       ]
     ],
-    "h1": "Diététicien du sport à Metz : une alimentation adaptée à vos entraînements",
+    "h1": "Une alimentation adaptée à vos entraînements",
     "blocks": [
       {
         "type": "p",
@@ -727,72 +727,6 @@
       {
         "type": "p",
         "text": "Une compétition, une reprise ou une augmentation du volume d’entraînement peut nécessiter une organisation différente. Nous anticipons les possibilités de repas, les déplacements et les conditions de l’effort. Les stratégies envisagées sont testées à l’entraînement lorsque cela est pertinent, afin de disposer de repères familiers le jour de l’échéance."
-      },
-      {
-        "type": "h2",
-        "id": "disciplines",
-        "text": "Un suivi adapté aux exigences de votre discipline"
-      },
-      {
-        "type": "h3",
-        "text": "Musculation et sports de force"
-      },
-      {
-        "type": "p",
-        "text": "Prise de masse musculaire, organisation des repas et évolution de la composition corporelle peuvent faire partie de la demande. Nous examinons les apports, leur répartition et leur faisabilité dans votre quotidien. Le travail ne se limite pas à choisir une quantité de protéines : il doit prendre en compte l’ensemble de votre alimentation et de votre préparation."
-      },
-      {
-        "type": "h3",
-        "text": "Sports de combat et disciplines à catégories de poids"
-      },
-      {
-        "type": "p",
-        "text": "La gestion du poids demande d’être anticipée et replacée dans le contexte de santé, d’entraînement et de compétition. La consultation ne repose pas sur des protocoles extrêmes de restriction ou de déshydratation. Nous évaluons la demande, le calendrier et les marges d’adaptation, en coordination avec les autres intervenants lorsque la situation le nécessite."
-      },
-      {
-        "type": "h3",
-        "text": "Endurance, sports collectifs et pratiques hybrides"
-      },
-      {
-        "type": "p",
-        "text": "Les besoins d’organisation varient selon la durée des séances, leur intensité, les horaires et l’accès à l’alimentation. Nous pouvons travailler sur les repas avant et après l’effort, les possibilités pendant certaines séances et la tolérance digestive. Course à pied, cyclisme ou sports collectifs n’impliquent pas une stratégie identique pour chaque pratiquant."
-      },
-      {
-        "type": "h2",
-        "id": "methode",
-        "text": "Comment se construit votre stratégie nutritionnelle ?"
-      },
-      {
-        "type": "h3",
-        "text": "Comprendre votre pratique et votre fonctionnement quotidien"
-      },
-      {
-        "type": "p",
-        "text": "Le bilan reprend votre discipline, vos objectifs, votre calendrier et vos habitudes alimentaires. Nous discutons de ce qui se passe concrètement avant, pendant et après les séances. Vos éventuels problèmes de santé, les traitements, les symptômes digestifs et les compléments utilisés font également partie des informations utiles."
-      },
-      {
-        "type": "p",
-        "text": "Vous pouvez apporter votre planning d’entraînement et les questions qui reviennent le plus souvent. Il n’est pas nécessaire de disposer d’une montre connectée, de mesures détaillées ou d’un relevé alimentaire exhaustif. Les outils sont choisis selon leur utilité. Nous commençons par les informations qui permettent de comprendre votre demande."
-      },
-      {
-        "type": "h3",
-        "text": "Transformer les besoins en solutions applicables"
-      },
-      {
-        "type": "p",
-        "text": "Nous définissons des repères de repas et des adaptations autour des entraînements. Cela peut concerner un départ matinal, une séance après le travail ou une compétition loin du domicile. Les choix tiennent compte de vos goûts, de votre budget et de votre matériel. Une stratégie doit rester réalisable dans les conditions où vous pratiquez."
-      },
-      {
-        "type": "h3",
-        "text": "Réviser les choix à partir de vos retours"
-      },
-      {
-        "type": "p",
-        "text": "Le suivi permet d’examiner votre confort, votre organisation et les difficultés observées. Une préparation sportive évolue ; les conseils peuvent évoluer avec elle. Nous distinguons les changements alimentaires de ce qui relève du programme d’entraînement ou d’un avis médical. Les performances dépendent de plusieurs facteurs et aucun résultat sportif ne peut être garanti par la nutrition seule."
-      },
-      {
-        "type": "cta",
-        "kind": "mid"
       },
       {
         "type": "h2",

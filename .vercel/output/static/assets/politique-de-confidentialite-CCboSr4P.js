@@ -1,1 +1,0 @@
-import{r as e}from"./legal-page-D3NZNoA2.js";var t=e;export{t as component};

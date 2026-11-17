@@ -60,10 +60,6 @@ const emphasis: Record<string, string[]> = {
     "relier votre alimentation aux exigences de votre discipline",
     "aux pratiquants amateurs comme aux compétiteurs",
     "Les stratégies envisagées sont testées à l’entraînement lorsque cela est pertinent",
-    "l’ensemble de votre alimentation et de votre préparation",
-    "votre discipline, vos objectifs, votre calendrier et vos habitudes alimentaires",
-    "Une stratégie doit rester réalisable dans les conditions où vous pratiquez.",
-    "Une préparation sportive évolue ; les conseils peuvent évoluer avec elle.",
     "Préparation Nutritionnelle A2P",
   ],
   "maladies-chroniques-et-aigues": [
@@ -144,7 +140,7 @@ function richText(text: string, links: LinkPair[], phrases: string[]) {
         key={index}
         href={slice.href}
         className="text-ink underline decoration-[#2b78d6] decoration-2 underline-offset-2"
-        {...(external ? { target: "_blank", rel: "noreferrer" } : {})}
+        {...(external ? (slice.href === STRONGDIET ? {} : { target: "_blank" as const, rel: "noreferrer" }) : {})}
       >
         {run.map((part, partIndex) =>
           part.strong ? (
@@ -338,6 +334,19 @@ export function ServicePage({ page }: { page: ServicePageData }) {
               ) : (
                 <h2 className={`mt-2 ${titleClass}`}>{page.h1}</h2>
               )}
+              {page.slug === "nutrition-du-sport" ? (
+                <div className="mt-6 max-w-[40rem] rounded-3xl border-2 border-olive bg-mint px-5 py-5 sm:px-6">
+                  <p className="text-base leading-7 font-semibold text-ink">
+                    Sportif régulier ou compétiteur ? Mon accompagnement dédié à la performance est sur StrongDiet.
+                  </p>
+                  <a
+                    href={STRONGDIET}
+                    className="focus-ring mt-4 inline-flex min-h-12 items-center rounded-full bg-olive px-7 text-xl font-bold text-paper hover:bg-olive-deep"
+                  >
+                    Découvrir StrongDiet
+                  </a>
+                </div>
+              ) : null}
               <div className="service-copy mt-5 max-w-[68ch] space-y-4 text-base leading-7 text-muted lg:text-[17px]">
                 {intro.map((block, index) =>
                   block.type === "p" ? <p key={index}>{richText(block.text ?? "", page.links, emphasis[page.slug] ?? [])}</p> : null,
@@ -484,8 +493,6 @@ export function ServicePage({ page }: { page: ServicePageData }) {
                   {section.id === "strongdiet" ? (
                     <a
                       href={STRONGDIET}
-                      target="_blank"
-                      rel="noreferrer"
                       className="focus-ring inline-flex min-h-12 items-center rounded-full bg-lime px-7 text-xl font-bold text-ink"
                     >
                       Découvrir StrongDiet
