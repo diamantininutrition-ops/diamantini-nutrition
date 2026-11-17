@@ -1,0 +1,100 @@
+@import "tailwindcss";
+@import "./fonts.css";
+
+@theme {
+  --color-olive: #719a54;
+  --color-olive-deep: #5d8444;
+  --color-olive-soft: #8fb56f;
+  --color-olive-lift: #7fa465;
+  --color-mint: #e8f6ca;
+  --color-ink: #303030;
+  --color-muted: #5e5e5e;
+  --color-paper: #ffffff;
+  --color-mist: #f3f3f3;
+  --color-line: #e4e4e4;
+  --color-apple: #d24b3c;
+  --color-lime: #e8f048;
+  --color-link: #2b78d6;
+  --color-night: #0e0e0e;
+  --font-sans: "Nunito Sans", "Segoe UI", sans-serif;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-calibri: Calibri, Carlito, "Segoe UI", sans-serif;
+  --shadow-card: 0 12px 36px rgb(48 48 48 / 0.1);
+  --shadow-card-hover: 0 22px 50px rgb(48 48 48 / 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--color-olive) 35%, white);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 80;
+  border-radius: 999px;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  padding: 0.6rem 1rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.acc-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 220ms ease;
+}
+
+.acc-panel[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.acc-panel > div {
+  overflow: hidden;
+}
+
+.service-copy strong {
+  font-weight: 700;
+  color: var(--color-ink);
+}
+
+.bg-night .service-copy strong,
+.bg-night .service-copy a {
+  color: inherit;
+}

@@ -1,0 +1,268 @@
+Ajoute un pied de page sur toutes les pages du site diamantini-nutrition.fr, et crée les pages légales obligatoires. Reprends les textes ci-dessous **intégralement**, sans les reformuler, sans ajouter ni retirer d’information factuelle. Tu peux uniquement adapter la mise en forme (titres, intertitres, listes, liens, espacements) au design actuel du site.
+
+## 0. Consignes techniques (obligatoires)
+
+- Auto-héberge toutes les polices du site (fichiers WOFF2 en local). N’utilise pas Google Fonts en ligne (aucun appel à fonts.googleapis.com, fonts.gstatic.com ou l’API Google Fonts). Si le site charge déjà des polices depuis Google, remplace-les par les mêmes polices auto-hébergées.
+- N’intègre pas de carte Google Maps, ni d’outil de mesure d’audience (Google Analytics, Google Tag Manager, Matomo cloud, etc.), ni de publicité, ni de pixel de réseau social, ni de reCAPTCHA / hCaptcha, ni d’autre service tiers qui dépose des cookies ou transmet l’adresse IP du visiteur dès le chargement de la page.
+- Les liens sortants (Doctolib, fiche Google, mailto, téléphone) sont autorisés : ils ne s’ouvrent que si le visiteur clique.
+- Aucun bandeau de consentement aux cookies n’est nécessaire tant que ces règles sont respectées. N’en ajoute pas.
+- Crée les pages accessibles aux adresses suivantes (et redirige les variantes sans tiret si besoin) :
+  - /mentions-legales/
+  - /politique-de-confidentialite/
+  - /cookies/
+- Chaque page légale a un titre H1, une date de mise à jour visible (« Dernière mise à jour : 17 novembre 2026 »), et reprend le design actuel du site. Vérifie le rendu sur mobile.
+- Dans le formulaire de contact, ajoute sous le bouton d’envoi le texte suivant, avec un lien sur « politique de confidentialité » vers /politique-de-confidentialite/ :
+
+« Vos nom, prénom, adresse e-mail, objet et message sont utilisés uniquement pour répondre à votre demande. Merci de ne pas y inscrire de données de santé (antécédents, diagnostics, traitements, etc.). Pour en savoir plus et exercer vos droits : politique de confidentialité. »
+
+## 1. Pied de page (toutes les pages)
+
+Pied de page sobre, lisible, adapté au mobile, présent sur toutes les pages.
+
+**Colonne 1 — Contact**
+- Valentin Diamantini – Diététicien-nutritionniste
+- 5 Rue Xavier Roussel, 57050 Metz
+- Téléphone : 07 82 59 31 10 (lien tel:+33782593110)
+- E-mail : diamantini.nutrition@gmail.com (lien mailto)
+- Bouton « Prendre rendez-vous » vers https://www.doctolib.fr/dieteticien/metz/valentin-diamantini (nouvel onglet)
+
+**Colonne 2 — Le site**
+- Liens vers les pages principales déjà présentes sur le site (accueil, accompagnements, avis, contact, etc.). N’invente pas de pages.
+
+**Colonne 3 — Informations légales**
+- Mentions légales → /mentions-legales/
+- Politique de confidentialité → /politique-de-confidentialite/
+- Gestion des cookies → /cookies/
+
+**Ligne du bas**
+- « © 2026 Valentin Diamantini, entrepreneur individuel (EI) – Diamantini Nutrition – Tous droits réservés »
+
+## 2. Page /mentions-legales/
+
+Reproduis exactement le texte suivant.
+
+---
+
+# Mentions légales
+
+Dernière mise à jour : 17 novembre 2026
+
+## Éditeur du site
+
+Le site diamantini-nutrition.fr est édité par :
+
+Valentin DIAMANTINI, entrepreneur individuel (EI)
+Diététicien-nutritionniste
+5 Rue Xavier Roussel
+57050 Metz
+France
+
+Téléphone : 07 82 59 31 10
+E-mail : diamantini.nutrition@gmail.com
+
+Immatriculation au Registre national des entreprises (RNE) : 894 443 696
+Numéro SIREN : 894 443 696
+Numéro SIRET (siège) : 894 443 696 00022
+Code APE / NAF : 86.90F (Activités de santé humaine non classées ailleurs)
+
+L’activité de diététicien est une profession libérale. Elle n’est pas immatriculée au Registre du commerce et des sociétés (RCS) ni au Répertoire des métiers (RM).
+
+## Profession réglementée
+
+Valentin DIAMANTINI exerce la profession de diététicien, profession de santé réglementée par les articles L. 4371-1 et suivants du Code de la santé publique.
+
+Le titre professionnel de diététicien est un titre protégé : seules peuvent l’exercer et le porter les personnes titulaires des diplômes, certificats ou titres prévus par la loi, ou d’une autorisation d’exercice (articles L. 4371-2 et L. 4372-2 du Code de la santé publique). Il n’existe pas d’ordre professionnel des diététiciens.
+
+- Numéro RPPS : 10007715815
+- Diplôme permettant l’exercice : DUT Génie biologique option diététique, obtenu à l’IUT Nancy-Brabois
+
+## Directeur de la publication
+
+Le directeur de la publication est Valentin DIAMANTINI.
+
+## Hébergeur
+
+Le site est hébergé par :
+
+GitHub, Inc.
+88 Colin P. Kelly Jr. Street
+San Francisco, CA 94107
+États-Unis
+Téléphone : +1 877 448 4820
+Site : https://github.com
+
+Le site est servi via GitHub Pages.
+
+## Propriété intellectuelle
+
+L’ensemble des contenus du site (textes, photographies, logo, identité visuelle, éléments graphiques, structure) est protégé par le droit de la propriété intellectuelle et appartient à Valentin DIAMANTINI, sauf mention contraire.
+
+Toute reproduction, représentation, modification, publication ou adaptation de tout ou partie de ces éléments, sur quelque support que ce soit, est interdite sans l’autorisation écrite préalable de Valentin DIAMANTINI, excepté pour un usage strictement privé et non commercial (consultation et impression pour usage personnel).
+
+## Avertissement santé
+
+Les contenus publiés sur ce site ont un caractère uniquement informatif. Ils ne constituent pas un avis médical ou diététique personnalisé et ne remplacent pas une consultation avec un professionnel de santé. Pour un accompagnement adapté, prenez rendez-vous.
+
+## Avis Google
+
+Les avis affichés sur ce site sont reproduits à partir de la fiche Google publique de Valentin Diamantini. Ils peuvent être consultés sur Google. Le lien « Voir tous les avis sur Google » ouvre cette fiche dans un nouvel onglet.
+
+## Règlement des litiges
+
+Pour toute question ou réclamation relative au site ou à l’activité, vous pouvez écrire à diamantini.nutrition@gmail.com ou appeler le 07 82 59 31 10.
+
+Les services de santé fournis par un professionnel de santé à ses patients pour évaluer, maintenir ou rétablir leur état de santé ne sont pas des litiges de consommation au sens de l’article L. 611-4 du Code de la consommation. Ils ne relèvent donc pas de la médiation de la consommation. À défaut d’accord amiable, le litige peut être porté devant les juridictions compétentes.
+
+## Données personnelles et cookies
+
+Le traitement des données personnelles et l’usage des cookies sont décrits dans la politique de confidentialité et la page Gestion des cookies.
+
+---
+
+## 3. Page /politique-de-confidentialite/
+
+Reproduis exactement le texte suivant.
+
+---
+
+# Politique de confidentialité
+
+Dernière mise à jour : 17 novembre 2026
+
+La présente politique décrit la manière dont Valentin DIAMANTINI traite les données personnelles collectées via le site diamantini-nutrition.fr, conformément au Règlement (UE) 2016/679 (RGPD) et à la loi n° 78-17 du 6 janvier 1978 dite Informatique et Libertés.
+
+## 1. Responsable du traitement
+
+Valentin DIAMANTINI, entrepreneur individuel (EI)
+5 Rue Xavier Roussel, 57050 Metz
+Téléphone : 07 82 59 31 10
+E-mail : diamantini.nutrition@gmail.com
+
+Aucun délégué à la protection des données (DPO) n’a été désigné, cette désignation n’étant pas obligatoire pour cette activité.
+
+## 2. Données collectées, finalités et bases légales
+
+### Formulaire de contact
+
+Lorsque vous utilisez le formulaire de contact du site, les données suivantes sont collectées : nom, prénom, adresse e-mail, objet et message.
+
+- Finalité : lire votre message et vous répondre, notamment pour une demande d’information ou de rendez-vous.
+- Base légale : l’exécution de mesures précontractuelles prises à votre demande (article 6, paragraphe 1, point b, du RGPD).
+- Caractère obligatoire : tous les champs du formulaire sont nécessaires pour traiter votre demande. Sans ces informations, le message ne peut pas être envoyé.
+
+### Données de navigation liées à l’hébergement
+
+Lors de la consultation du site, l’hébergeur peut enregistrer des données techniques de connexion (notamment l’adresse IP, le type de navigateur et la date de la requête), dans le cadre de l’exploitation et de la sécurité du site.
+
+- Finalité : assurer le fonctionnement, la sécurité et la disponibilité du site.
+- Base légale : l’intérêt légitime de l’éditeur à proposer un site sûr et fonctionnel (article 6, paragraphe 1, point f, du RGPD).
+
+Le site ne dépose pas de cookies publicitaires ni de cookies de mesure d’audience. Pour plus de détails, voir la page Gestion des cookies.
+
+### Ce que ce formulaire ne collecte pas
+
+Le formulaire de contact n’est pas un dossier patient. Il n’est pas destiné à recevoir des données de santé (antécédents médicaux, diagnostics, résultats d’examens, traitements, pathologies, etc.).
+
+**Merci de ne pas inscrire de données de santé dans le formulaire.** Ces informations relèvent d’une consultation, que vous pouvez prendre via Doctolib ou en contactant le cabinet. Si un message contenant des données de santé est malgré tout reçu, il sera utilisé uniquement pour vous répondre, puis traité avec une vigilance particulière.
+
+Les prises de rendez-vous en ligne s’effectuent sur Doctolib, service indépendant, selon la politique de confidentialité de Doctolib.
+
+## 3. Destinataires et sous-traitants
+
+Vos données ne sont ni vendues ni louées.
+
+Elles sont destinées à Valentin DIAMANTINI. Pour faire fonctionner le site et le formulaire, les prestataires suivants interviennent :
+
+- **Web3Creative**, qui opère le service **Web3Forms** (formulaire de contact) : l’entreprise est enregistrée au Kerala (Inde), immatriculation Udyam UDYAM-KL-10-0039115. Elle agit en qualité de sous-traitant. Le message est transmis par e-mail. Selon la documentation de Web3Forms, les serveurs utilisés se situent aux États-Unis (région US-East). Web3Forms indique recourir notamment à Amazon Web Services, Cloudflare et Hetzner, et pouvoir transmettre l’adresse IP et l’adresse e-mail de l’expéditeur à des services antispam (CleanTalk, Akismet). Contact : support@web3forms.com. Politique de confidentialité : https://web3forms.com/privacy
+- **Google LLC** (Gmail) : la boîte de réception utilisée pour recevoir et traiter les messages est diamantini.nutrition@gmail.com.
+- **GitHub, Inc.** : hébergement du site via GitHub Pages.
+
+Les autorités compétentes peuvent également recevoir des données si la loi l’exige.
+
+## 4. Transferts hors de l’Union européenne
+
+L’hébergement du site et le traitement du formulaire impliquent des transferts de données vers des pays situés hors de l’Union européenne, notamment les États-Unis (et, pour l’opérateur de Web3Forms, l’Inde).
+
+- **GitHub, Inc.** est certifiée au titre du cadre de protection des données UE-États-Unis (EU-U.S. Data Privacy Framework). Fiche publique : https://www.dataprivacyframework.gov/participant/6174
+- **Google LLC** (Gmail) est certifiée au titre du même cadre UE-États-Unis. Fiche publique : https://www.dataprivacyframework.gov/participant/5780
+- **Web3Creative / Web3Forms** n’est pas certifiée au Data Privacy Framework. L’entreprise indique encadrer les transferts depuis l’Espace économique européen par des clauses contractuelles types, décrites dans son accord de traitement des données (https://web3forms.com/dpa).
+
+## 5. Durées de conservation
+
+- Messages reçus via le formulaire de contact : conservés pendant 3 ans à compter du dernier contact, puis supprimés ou archivés sous une forme ne permettant plus de vous identifier, sauf obligation légale contraire ou nécessité de conserver un élément dans le cadre d’un litige.
+- Selon sa politique, Web3Forms peut conserver des données de formulaire au plus pendant 3 ans, et indique supprimer périodiquement les journaux serveur.
+- Données de journalisation de l’hébergeur : selon la politique de GitHub et les durées nécessaires à la sécurité du service.
+
+Cette durée de 3 ans concerne le formulaire de contact du site. Elle ne s’applique pas à un dossier patient constitué dans le cadre d’une prise en charge, qui obéit à des règles de conservation distinctes.
+
+## 6. Vos droits
+
+Vous disposez des droits suivants, dans les conditions prévues par le RGPD :
+
+- droit d’accès ;
+- droit de rectification ;
+- droit à l’effacement ;
+- droit à la limitation du traitement ;
+- droit d’opposition ;
+- droit à la portabilité des données, lorsque cela s’applique.
+
+Pour exercer ces droits, écrivez à diamantini.nutrition@gmail.com ou à l’adresse postale indiquée ci-dessus, en précisant votre demande. Une preuve d’identité pourra être demandée en cas de doute raisonnable sur votre identité.
+
+Vous avez également le droit d’introduire une réclamation auprès de la Commission nationale de l’informatique et des libertés (CNIL) : 3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 – www.cnil.fr.
+
+## 7. Sécurité
+
+Des mesures raisonnables sont mises en œuvre pour protéger vos données (formulaire transmis en HTTPS, accès restreint à la boîte mail professionnelle). Aucun système n’étant totalement à l’abri d’un risque, ces mesures visent à réduire les risques d’accès non autorisé, de perte ou d’altération.
+
+## 8. Modification de la présente politique
+
+Cette politique peut être mise à jour pour tenir compte d’une évolution du site, des prestataires ou de la réglementation. La date de dernière mise à jour figure en haut de cette page.
+
+---
+
+## 4. Page /cookies/
+
+Reproduis exactement le texte suivant.
+
+---
+
+# Gestion des cookies
+
+Dernière mise à jour : 17 novembre 2026
+
+## Que sont les cookies et les traceurs ?
+
+Un cookie ou un traceur est un fichier ou un identifiant déposé ou lu sur votre appareil (ordinateur, téléphone, tablette) lors de la consultation d’un site. Le cadre applicable est notamment l’article 82 de la loi Informatique et Libertés et les recommandations de la CNIL.
+
+Certains traceurs sont strictement nécessaires au fonctionnement du site et peuvent être utilisés sans consentement préalable. Les autres (publicité, réseaux sociaux, mesure d’audience non exemptée, etc.) nécessitent votre consentement avant tout dépôt ou lecture.
+
+## Ce que fait ce site
+
+Le site diamantini-nutrition.fr n’utilise aucun cookie publicitaire, aucun cookie de réseau social et aucun outil de mesure d’audience.
+
+Les polices du site sont auto-hébergées : elles ne sont pas chargées depuis les serveurs de Google Fonts. Aucune carte Google Maps n’est intégrée dans les pages.
+
+En cliquant sur un lien vers un service tiers (Doctolib, fiche Google, par exemple), vous quittez ce site et êtes soumis à la politique de confidentialité de ce service.
+
+L’hébergeur (GitHub Pages) peut enregistrer des journaux techniques de connexion (notamment l’adresse IP) pour le fonctionnement et la sécurité du service. Ces journaux ne sont pas des cookies déposés par l’éditeur du site à des fins publicitaires ou statistiques.
+
+## Pas de bandeau de consentement
+
+En l’état actuel du site, aucun traceur soumis au consentement n’est déposé. Aucun bandeau de consentement n’est donc affiché.
+
+Si un outil nécessitant un consentement devait être ajouté plus tard (mesure d’audience non exemptée, carte Google Maps intégrée, police chargée depuis Google, publicité, reCAPTCHA, etc.), un bandeau permettant d’accepter ou de refuser ces traceurs serait mis en place avant leur dépôt, conformément aux recommandations de la CNIL.
+
+## Vos paramètres de navigation
+
+Vous pouvez configurer votre navigateur pour bloquer ou supprimer les cookies. Les modalités figurent dans l’aide de votre navigateur. Pour en savoir plus : https://www.cnil.fr/fr/cookies-et-autres-traceurs
+
+Pour les données personnelles collectées par ailleurs (formulaire de contact), voir la politique de confidentialité.
+
+---
+
+## 5. Finition
+
+- Vérifie que tous les liens du pied de page et des pages légales fonctionnent, y compris sur mobile.
+- Vérifie qu’aucun appel réseau n’est fait vers fonts.googleapis.com, fonts.gstatic.com, googletagmanager.com, google-analytics.com, maps.googleapis.com ou un service de cookies tiers au chargement d’une page.
+- Ne modifie pas le reste du contenu du site, hors pied de page, pages légales, auto-hébergement des polices si nécessaire, et mention sous le formulaire de contact.
+
