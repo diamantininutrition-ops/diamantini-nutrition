@@ -1,8 +1,8 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { J as require_react, q as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Minus, i as Plus, l as ChevronRight, u as ChevronLeft } from "../_libs/lucide-react.mjs";
-import { a as faqs, i as SiteHeader, n as STRONGDIET, o as reviews, r as SiteFooter, s as specialties, t as RDV } from "./site-header-Cma7Ja4j.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/routes-C09xLicC.js
+import { a as faqs, i as SiteHeader, n as STRONGDIET, o as reviews, r as SiteFooter, s as specialties, t as RDV } from "./site-header-69vo0U8O.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/routes-CBnPXht3.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var offers = [
@@ -81,6 +81,8 @@ function Hero() {
 function Portrait() {
 	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 		src: "/media/valentin-diamantini-dieteticien-metz.webp",
+		srcSet: "/media/valentin-diamantini-dieteticien-metz-480.webp 480w, /media/valentin-diamantini-dieteticien-metz-800.webp 800w, /media/valentin-diamantini-dieteticien-metz.webp 1126w",
+		sizes: "(min-width: 1024px) 32rem, 24rem",
 		alt: "Valentin Diamantini, diététicien nutritionniste à Metz",
 		width: 1126,
 		height: 1122,
@@ -152,10 +154,10 @@ function Story() {
 				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
 					className: "mx-auto w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none",
 					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
-						src: "/media/valentin-diamantini-portrait.jpg",
+						src: "/media/valentin-diamantini-portrait.webp",
 						alt: "Portrait de Valentin Diamantini, diététicien nutritionniste",
-						width: 960,
-						height: 720,
+						width: 836,
+						height: 874,
 						loading: "lazy",
 						decoding: "async",
 						className: "h-56 w-full object-cover object-top sm:h-64 lg:h-60"
@@ -715,8 +717,9 @@ function Reviews() {
 						role: "tab",
 						"aria-selected": i === index,
 						"aria-label": `Avis ${i + 1}`,
-						className: `size-2.5 rounded-full ${i === index ? "bg-olive" : "bg-olive/35"}`,
-						onClick: () => go(i)
+						className: "focus-ring flex h-6 w-6 items-center justify-center",
+						onClick: () => go(i),
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", { className: `size-2.5 rounded-full ${i === index ? "bg-olive" : "bg-olive/35"}` })
 					}, i))
 				}),
 				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {

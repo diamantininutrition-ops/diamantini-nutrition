@@ -25,6 +25,28 @@ export const Route = createFileRoute("/sante-au-travail")({
       { name: "twitter:title", content: OG_TITLE },
       { name: "twitter:description", content: OG_DESCRIPTION },
     ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          itemListElement: [
+            { "@type": "ListItem", position: 1, name: "Accueil", item: "https://diamantini-nutrition.fr/" },
+            { "@type": "ListItem", position: 2, name: "Santé au travail", item: URL },
+          ],
+        }),
+      },
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "MedicalWebPage",
+          about: "Santé au travail",
+          publisher: { "@id": "https://diamantini-nutrition.fr/#cabinet" },
+        }),
+      },
+    ],
   }),
   component: SanteAuTravailPage,
 });

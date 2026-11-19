@@ -274,23 +274,10 @@ function grokOgHeadTags({ host = "", appName = DEFAULT_APP_NAME, site = {}, docu
 function stripGrokExtensionsScript(html) {
 	return String(html).replace(/<script\b[^>]*\bsrc\s*=\s*["'][^"']*\/grok-app-builder\/extensions\.js[^"']*["'][^>]*>\s*<\/script>/gi, "");
 }
-var PAGE_SHARE_KEYS = /* @__PURE__ */ new Set([
-	"og:title",
-	"og:description",
-	"og:type",
-	"og:url",
-	"og:site_name",
-	"twitter:title",
-	"twitter:description"
-]);
 function stripShareMetaTags(html) {
 	return String(html).replace(/<meta\b[^>]*>/gi, (tag) => {
 		const attrs = [...tag.matchAll(/\b(?:property|name)\s*=\s*["']([^"']+)["']/gi)];
-		for (const match of attrs) {
-			const key = String(match[1]).toLowerCase();
-			if (PAGE_SHARE_KEYS.has(key)) return tag;
-			if (SHARE_META_KEYS.has(key)) return "";
-		}
+		for (const match of attrs) if (SHARE_META_KEYS.has(String(match[1]).toLowerCase())) return "";
 		return tag;
 	});
 }
@@ -323,23 +310,24 @@ function injectGrokPwaHead(html, ctx = {}) {
 	const appName = resolveOgTitle(site, ctx.appName ?? "Grok App", host, documentTitle);
 	let next = stripShareMetaTags(html);
 	if (!readGrokExtensionsEnabled()) next = stripGrokExtensionsScript(next);
-	const ogTags = grokOgHeadTags({
+	const missing = grokPwaHeadTags(appName).filter(([key]) => {
+		if (key === "manifest") {
+			if (next.includes("href=\"/favicon.ico\"") || next.includes("href='/favicon.ico'")) return false;
+			return !next.includes("href=\"/__grok/manifest.webmanifest\"");
+		}
+		if (key === "apple-touch-icon") {
+			if (/rel=["']apple-touch-icon["']/i.test(next)) return false;
+			return !next.includes("href=\"/__grok/icon-180.png\"");
+		}
+		return !next.includes(`name="${key}"`);
+	}).map(([, tag]) => tag);
+	next = insertAfterHeadOpen(next, grokOgHeadTags({
 		host,
 		appName,
 		site,
 		documentTitle,
 		cwd
-	}).filter((tag) => {
-		const key = tag.match(/\b(?:property|name)="([^"]+)"/i)?.[1]?.toLowerCase();
-		if (!key) return true;
-		return !next.toLowerCase().includes(`property="${key}"`) && !next.toLowerCase().includes(`name="${key}"`);
-	});
-	const missing = grokPwaHeadTags(appName).filter(([key]) => {
-		if (key === "manifest") return !next.includes("href=\"/__grok/manifest.webmanifest\"");
-		if (key === "apple-touch-icon") return !next.includes("href=\"/__grok/icon-180.png\"");
-		return !next.includes(`name="${key}"`);
-	}).map(([, tag]) => tag);
-	next = insertAfterHeadOpen(next, ogTags.join(""));
+	}).join(""));
 	if (readGrokExtensionsEnabled() && !next.includes("/grok-app-builder/extensions.js")) missing.push(...grokExtensionsHeadTags(projectId));
 	else if (projectId && !next.includes("name=\"grok-project-id\"")) missing.push(`<meta name="grok-project-id" content="${escapeHtml(projectId)}">`);
 	if (projectId && !next.includes("property=\"grok:app_id\"") && !next.includes("property='grok:app_id'")) missing.push(`<meta property="grok:app_id" content="${escapeHtml(projectId)}">`);

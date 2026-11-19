@@ -1,1 +1,0 @@
-import{n as e,p as t,t as n}from"./index-B83g6V_L.js";var r=t(),i=function(){let t=n.useLoaderData();return(0,r.jsx)(e,{page:t})};export{i as component};

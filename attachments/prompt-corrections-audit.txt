@@ -1,0 +1,164 @@
+Corrections techniques ciblées sur diamantini-nutrition.fr, d’après un audit du 19 novembre 2026. Le site est en TanStack Start, déployé sur GitHub Pages.
+
+RÈGLE ABSOLUE : ne modifie AUCUN texte visible du site (paragraphes, titres, h1, h2, h3, boutons, menus, FAQ, alt des images). La seule exception : remplacer les deux URL de liens externes mortes indiquées ci-dessous, sans changer le libellé du lien. Ne change pas les title, meta descriptions, Open Graph, Twitter, couleurs, ni le design. Ne touche pas à .github/workflows/deploy.yml, ni à public/sitemap.xml, ni à public/robots.txt, ni aux pages de redirection déjà présentes (public/1258-2/, public/1247-2/, public/1361-2/, public/equilibre-alimentaire-4/, public/contact/).
+
+Domaine : https://diamantini-nutrition.fr (sans www). Les URL de pages se terminent par un slash.
+
+--------------------------------------------------
+1) LIENS EXTERNES CASSÉS (remplacer uniquement l’URL)
+--------------------------------------------------
+
+Dans src/data/service-pages.json (et partout ailleurs si la même URL apparaît) :
+
+A. Page /troubles-digestifs/
+Ancienne URL (404) :
+https://monashfodmap.com/documents/192/3-step_FODMAP_Diet_2025_A4_info_sheet.pdf
+Nouvelle URL (vérifiée HTTP 200, application/pdf, fiche officielle Monash « 3-step FODMAP Diet » mise à jour 2026) :
+https://monashfodmap.com/documents/203/3-step_FODMAP_Diet_2026_A4_info_sheet.pdf
+Ne change pas le texte du lien (« présentation des trois étapes par Monash University »).
+
+B. Page /maladies-chroniques-et-aigues/
+Ancienne URL (404) :
+https://www.cancer.fr/catalogue-des-publications/cancer-votre-alimentation-pendant-les-traitements
+Nouvelle URL :
+https://www.afdn.org/actualite/publication-inca-cancer-votre-alimentation-traitements
+Important : au 19 novembre 2026, le site de l’Institut national du cancer (cancer.fr) est en maintenance. La page catalogue et le PDF officiels sur cancer.fr répondent 404. Cette page de l’AFDN (association professionnelle des diététiciens-nutritionnistes) est la page officielle la plus proche encore accessible : elle présente la fiche INCa « Cancers : votre alimentation pendant les traitements » (réf. FALIMENTAT25) et a été vérifiée HTTP 200. Ne change pas le texte du lien (« Institut national du cancer propose des informations sur l’alimentation pendant les traitements »).
+
+--------------------------------------------------
+2) REDIRECTIONS STATIQUES DES ANCIENNES URL LÉGALES
+--------------------------------------------------
+
+GitHub Pages ne sert pas les redirections TanStack (src/routes/mentionslegales.tsx et src/routes/politiquedeconfidentialite.tsx) : aujourd’hui /mentionslegales et /politiquedeconfidentialite (avec ou sans slash) répondent 404. Laisse ces routes TanStack en place pour l’aperçu en développement, mais ajoute des fichiers HTML statiques dans public/, comme pour /contact/. Sur GitHub Pages, un dossier avec index.html couvre l’URL avec slash, et l’URL sans slash est redirigée automatiquement en 301 vers celle avec slash.
+
+Crée exactement ces deux fichiers :
+
+- public/mentionslegales/index.html → https://diamantini-nutrition.fr/mentions-legales/
+- public/politiquedeconfidentialite/index.html → https://diamantini-nutrition.fr/politique-de-confidentialite/
+
+Reproduis le modèle déjà utilisé dans public/contact/index.html (titre « Redirection », noindex, follow, canonical, meta refresh, location.replace). Modèle exact, en remplaçant uniquement URL_CIBLE :
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>Redirection</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="canonical" href="URL_CIBLE">
+  <meta http-equiv="refresh" content="0; url=URL_CIBLE">
+  <script>location.replace("URL_CIBLE")</script>
+</head>
+<body>
+  <p><a href="URL_CIBLE">URL_CIBLE</a></p>
+</body>
+</html>
+
+Ces fichiers doivent se retrouver tels quels dans le build final (par exemple .vercel/output/static/mentionslegales/index.html et .../politiquedeconfidentialite/index.html) et ne pas être écrasés par le prerender. Ne crée pas d’entrée sitemap pour ces redirections.
+
+--------------------------------------------------
+3) MANIFEST, FAVICONS, JSON-LD
+--------------------------------------------------
+
+3a) Manifest
+Dans src/routes/__root.tsx, supprime uniquement la ligne :
+{ rel: "manifest", href: "/__grok/manifest.webmanifest" }
+Ne publie pas ce manifest. Ne touche pas aux autres liens du head, sauf ceux indiqués en 3b.
+
+3b) Favicon et apple-touch-icon
+- Génère public/favicon.ico à partir du fichier existant public/favicon.svg (grappe verte, fond blanc, trait rouge). Inclus au moins les tailles 16×16, 32×32 et 48×48 dans le .ico.
+- Génère public/apple-touch-icon.png (180×180, PNG) à partir du même favicon.svg, pour qu’il soit servi à la racine du site.
+- Dans src/routes/__root.tsx, garde le lien existant vers /favicon.svg, et ajoute :
+  { rel: "icon", href: "/favicon.ico", sizes: "any" }
+  { rel: "apple-touch-icon", href: "/apple-touch-icon.png" }
+- Retire ou remplace le lien actuel { rel: "apple-touch-icon", href: "/__grok/icon-180.png" } pour qu’il pointe vers /apple-touch-icon.png. Ne change pas theme-color ni les autres meta.
+
+3c) JSON-LD de /sante-au-travail/
+Dans src/routes/sante-au-travail.tsx, ajoute dans head.scripts les deux blocs suivants, sur le même modèle que src/routes/$slug.tsx. Ne change pas le title, la meta description, ni les balises Open Graph / Twitter déjà en place.
+
+Bloc 1 — BreadcrumbList :
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://diamantini-nutrition.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Santé au travail", "item": "https://diamantini-nutrition.fr/sante-au-travail/" }
+  ]
+}
+
+Bloc 2 — MedicalWebPage :
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalWebPage",
+  "about": "Santé au travail",
+  "publisher": { "@id": "https://diamantini-nutrition.fr/#cabinet" }
+}
+
+3d) areaServed du MedicalBusiness (accueil uniquement)
+Dans src/routes/index.tsx, remplace uniquement la propriété areaServed actuellement égale à "Metz" par :
+
+areaServed: [
+  { "@type": "City", "name": "Metz" },
+  { "@type": "AdministrativeArea", "name": "Moselle" },
+  { "@type": "AdministrativeArea", "name": "Grand Est" }
+]
+
+Ne change rien d’autre dans cet objet JSON-LD (name, adresse, téléphone, sameAs, etc.).
+
+--------------------------------------------------
+4) IMAGES ET CIBLES TACTILES DU CARROUSEL D’AVIS
+--------------------------------------------------
+
+4a) Portrait de la section « parcours » (accueil)
+Fichier actuel : public/media/valentin-diamantini-portrait.jpg, utilisé dans src/components/site/home-page.tsx (composant Story, section #parcours).
+- Crée public/media/valentin-diamantini-portrait.webp (conversion WebP de bonne qualité, même cadrage).
+- Remplace le src de l’<img> par /media/valentin-diamantini-portrait.webp.
+- Conserve exactement l’alt actuel : « Portrait de Valentin Diamantini, diététicien nutritionniste ».
+- Conserve les classes CSS actuelles (h-56 w-full object-cover object-top sm:h-64 lg:h-60, loading="lazy", decoding="async").
+- Mets les attributs width et height à la taille intrinsèque réelle du nouveau WebP (le JPEG actuel mesure 836×874 ; les attributs HTML 960×720 sont inexacts).
+- Tu peux laisser le .jpg dans public/media/ s’il n’est plus référencé, ou le retirer s’il n’est plus utilisé nulle part.
+
+4b) Photo d’accueil (hero)
+Fichier : public/media/valentin-diamantini-dieteticien-metz.webp (1126×1122), dans src/components/site/home-page.tsx.
+Affichage actuel : className "relative z-10 mx-auto w-full max-w-sm lg:max-w-lg" (soit 24rem / 32rem).
+- Génère des versions redimensionnées, par exemple :
+  /media/valentin-diamantini-dieteticien-metz-480.webp (largeur 480)
+  /media/valentin-diamantini-dieteticien-metz-800.webp (largeur 800)
+  et conserve l’original en 1126 de large.
+- Ajoute srcset et sizes, par exemple :
+  srcset="/media/valentin-diamantini-dieteticien-metz-480.webp 480w, /media/valentin-diamantini-dieteticien-metz-800.webp 800w, /media/valentin-diamantini-dieteticien-metz.webp 1126w"
+  sizes="(min-width: 1024px) 32rem, 24rem"
+- Garde src sur l’original (repli), alt, width={1126}, height={1122}, fetchPriority="high", decoding="async" et les classes CSS. Si un <link rel="preload"> pointe vers cette image, mets-le à jour avec imagesrcset et imagesizes correspondants.
+
+4c) Logo d’en-tête
+Fichier : public/media/diamantini-nutrition-logo.webp (1270×700), dans src/components/site/site-header.tsx.
+Affichage actuel : className "h-12 w-auto md:h-14" (48 px / 56 px de haut, soit environ 87×48 et 102×56).
+- Génère des versions adaptées, par exemple :
+  /media/diamantini-nutrition-logo-160.webp (largeur 160)
+  /media/diamantini-nutrition-logo-320.webp (largeur 320)
+  /media/diamantini-nutrition-logo-640.webp (largeur 640)
+- Ajoute srcset et sizes, par exemple :
+  srcset="/media/diamantini-nutrition-logo-160.webp 160w, /media/diamantini-nutrition-logo-320.webp 320w, /media/diamantini-nutrition-logo-640.webp 640w"
+  sizes="(min-width: 768px) 102px, 87px"
+- Garde src (tu peux laisser l’original 1270 ou pointer vers la version 640), alt="Diamantini Nutrition", width et height cohérents avec le fichier utilisé en src, decoding="async" et les classes CSS. Mets à jour un éventuel preload de cette image (imagesrcset / imagesizes).
+
+4d) Pastilles du carrousel d’avis (accueil uniquement)
+Dans src/components/site/home-page.tsx, les boutons du tablist « Avis affichés » ont aujourd’hui la classe size-2.5 (cible 10×10 px). Il faut une cible d’au moins 24×24 px, en gardant le même point visuel (disque 10 px, mêmes couleurs bg-olive / bg-olive/35, même arrondi).
+Méthode : ne plus mettre size-2.5 sur le <button>. Donne au bouton une zone de clic de 24×24 px (par exemple flex h-6 w-6 items-center justify-center, ou un padding équivalent) et place le disque visuel dans un <span className="size-2.5 rounded-full ..."> intérieur. Ne change pas les aria-label, role="tab", ni le reste du carrousel.
+
+--------------------------------------------------
+5) CONTRÔLES APRÈS BUILD
+--------------------------------------------------
+
+Vérifie tout ceci avant de terminer :
+
+- https://diamantini-nutrition.fr/troubles-digestifs/ : le lien Monash pointe vers .../documents/203/3-step_FODMAP_Diet_2026_A4_info_sheet.pdf et le libellé n’a pas changé.
+- https://diamantini-nutrition.fr/maladies-chroniques-et-aigues/ : le lien INCa/AFDN pointe vers https://www.afdn.org/actualite/publication-inca-cancer-votre-alimentation-traitements et le libellé n’a pas changé.
+- /mentionslegales et /mentionslegales/ mènent à https://diamantini-nutrition.fr/mentions-legales/ (page HTML de redirection : 200, noindex, follow, canonical et meta-refresh vers l’URL avec slash).
+- /politiquedeconfidentialite et /politiquedeconfidentialite/ mènent à https://diamantini-nutrition.fr/politique-de-confidentialite/ (même schéma).
+- Aucune balise <link rel="manifest"> vers /__grok/manifest.webmanifest dans le <head>. Plus d’erreur 404 de manifest dans la console.
+- /favicon.ico et /apple-touch-icon.png répondent 200. Le <head> contient le lien icon vers /favicon.svg, le lien icon vers /favicon.ico, et apple-touch-icon vers /apple-touch-icon.png.
+- Le HTML de /sante-au-travail/ contient les deux scripts type="application/ld+json" (BreadcrumbList et MedicalWebPage) décrits plus haut. Le title de cette page reste « Santé au travail à Metz | Diamantini Nutrition ».
+- Le JSON-LD MedicalBusiness de l’accueil a areaServed égal à Metz, Moselle et Grand Est. Le reste du bloc (NAP, téléphone, etc.) est inchangé.
+- L’accueil utilise valentin-diamantini-portrait.webp (plus de src vers le .jpg). L’alt du portrait, de la photo d’accueil et du logo sont inchangés. Les <img> du hero et du logo ont srcset et sizes. Les fichiers variants existent et répondent 200.
+- Les pastilles d’avis ont une zone cliquable d’au moins 24×24 px, avec le même point visuel qu’aujourd’hui.
+- Les title, meta descriptions et textes visibles des 8 pages n’ont pas été modifiés (hors les deux URL de liens).
+- deploy.yml, sitemap.xml, robots.txt et les 5 anciennes pages de redirection WordPress sont inchangés.

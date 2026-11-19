@@ -1,4 +1,4 @@
-//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-Bpup9Irp.js
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DcINhBIG.js
 var tsrStartManifest = () => ({ routes: {
 	__root__: {
 		filePath: "/workspace/src/routes/__root.tsx",
@@ -12,42 +12,42 @@ var tsrStartManifest = () => ({ routes: {
 			"/politiquedeconfidentialite",
 			"/sante-au-travail"
 		],
-		preloads: ["/assets/index-B83g6V_L.js"],
+		preloads: ["/assets/index-BAhOfRZY.js"],
 		scripts: [{ attrs: {
 			type: "module",
 			async: !0,
-			src: "/assets/index-B83g6V_L.js"
+			src: "/assets/index-BAhOfRZY.js"
 		} }]
 	},
 	"/": {
 		filePath: "/workspace/src/routes/index.tsx",
 		children: void 0,
-		preloads: ["/assets/routes-qn-rxfbK.js"]
+		preloads: ["/assets/routes-B8CQM9de.js"]
 	},
 	"/$slug": {
 		filePath: "/workspace/src/routes/$slug.tsx",
 		children: void 0,
-		preloads: ["/assets/_slug-DZnToPah.js"]
+		preloads: ["/assets/_slug-DO6HVumn.js"]
 	},
 	"/cookies": {
 		filePath: "/workspace/src/routes/cookies.tsx",
 		children: void 0,
-		preloads: ["/assets/cookies-C8espYW_.js", "/assets/legal-page-Cy1dKeIG.js"]
+		preloads: ["/assets/cookies-CQuE9MMY.js", "/assets/legal-page-DBrgOuHr.js"]
 	},
 	"/mentions-legales": {
 		filePath: "/workspace/src/routes/mentions-legales.tsx",
 		children: void 0,
-		preloads: ["/assets/mentions-legales-CBSFgOVs.js", "/assets/legal-page-Cy1dKeIG.js"]
+		preloads: ["/assets/mentions-legales-Cg4uqZng.js", "/assets/legal-page-DBrgOuHr.js"]
 	},
 	"/politique-de-confidentialite": {
 		filePath: "/workspace/src/routes/politique-de-confidentialite.tsx",
 		children: void 0,
-		preloads: ["/assets/politique-de-confidentialite-BeXbuins.js", "/assets/legal-page-Cy1dKeIG.js"]
+		preloads: ["/assets/politique-de-confidentialite-BeYgoFhs.js", "/assets/legal-page-DBrgOuHr.js"]
 	},
 	"/sante-au-travail": {
 		filePath: "/workspace/src/routes/sante-au-travail.tsx",
 		children: void 0,
-		preloads: ["/assets/sante-au-travail-DN5h_Egu.js"]
+		preloads: ["/assets/sante-au-travail-B9Jvz8KC.js"]
 	}
 } });
 //#endregion

@@ -14,6 +14,8 @@ export function SiteHeader() {
         <a href="/" className="focus-ring shrink-0 rounded-md" onClick={() => setOpen(false)}>
           <img
             src="/media/diamantini-nutrition-logo.webp"
+            srcSet="/media/diamantini-nutrition-logo-160.webp 160w, /media/diamantini-nutrition-logo-320.webp 320w, /media/diamantini-nutrition-logo-640.webp 640w"
+            sizes="(min-width: 768px) 102px, 87px"
             alt="Diamantini Nutrition"
             width={1270}
             height={700}

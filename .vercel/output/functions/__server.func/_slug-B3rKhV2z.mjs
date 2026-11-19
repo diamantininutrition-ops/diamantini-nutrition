@@ -1,6 +1,6 @@
 import { q as require_jsx_runtime } from "./_libs/@tanstack/react-router+[...].mjs";
-import { n as Route$6, r as ServicePage } from "./_ssr/router-CrKrnWEc.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/_slug-CogS8IG2.js
+import { n as Route$6, r as ServicePage } from "./_ssr/router-B8ooAsFD.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/_slug-B3rKhV2z.js
 var import_jsx_runtime = require_jsx_runtime();
 var SplitComponent = function ServiceRoute() {
 	const page = Route$6.useLoaderData();

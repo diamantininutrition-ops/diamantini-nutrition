@@ -1,8 +1,8 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { J as require_react, q as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { a as Minus, c as Cog, i as Plus, r as Star, s as Heart } from "../_libs/lucide-react.mjs";
-import { i as SiteHeader, r as SiteFooter } from "./site-header-Cma7Ja4j.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/sante-au-travail-IVxB1Drs.js
+import { i as SiteHeader, r as SiteFooter } from "./site-header-69vo0U8O.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/sante-au-travail-C4GNNLy3.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 function NutriCorp({ className = "" }) {

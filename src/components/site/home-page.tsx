@@ -72,6 +72,8 @@ function Portrait() {
   return (
     <img
       src="/media/valentin-diamantini-dieteticien-metz.webp"
+      srcSet="/media/valentin-diamantini-dieteticien-metz-480.webp 480w, /media/valentin-diamantini-dieteticien-metz-800.webp 800w, /media/valentin-diamantini-dieteticien-metz.webp 1126w"
+      sizes="(min-width: 1024px) 32rem, 24rem"
       alt="Valentin Diamantini, diététicien nutritionniste à Metz"
       width={1126}
       height={1122}
@@ -134,10 +136,10 @@ function Story() {
       <div className="mx-auto grid max-w-6xl items-start gap-8 px-5 pt-12 sm:px-6 lg:grid-cols-[280px_1fr] lg:gap-12 lg:pt-16">
         <div className="mx-auto w-full max-w-sm overflow-hidden rounded-2xl lg:mx-0 lg:max-w-none">
           <img
-            src="/media/valentin-diamantini-portrait.jpg"
+            src="/media/valentin-diamantini-portrait.webp"
             alt="Portrait de Valentin Diamantini, diététicien nutritionniste"
-            width={960}
-            height={720}
+            width={836}
+            height={874}
             loading="lazy"
             decoding="async"
             className="h-56 w-full object-cover object-top sm:h-64 lg:h-60"
@@ -550,9 +552,11 @@ function Reviews() {
               role="tab"
               aria-selected={i === index}
               aria-label={`Avis ${i + 1}`}
-              className={`size-2.5 rounded-full ${i === index ? "bg-olive" : "bg-olive/35"}`}
+              className="focus-ring flex h-6 w-6 items-center justify-center"
               onClick={() => go(i)}
-            />
+            >
+              <span className={`size-2.5 rounded-full ${i === index ? "bg-olive" : "bg-olive/35"}`} />
+            </button>
           ))}
         </div>
         <div className="mt-8 text-center">

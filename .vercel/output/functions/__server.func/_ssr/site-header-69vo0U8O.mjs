@@ -1,7 +1,7 @@
 import { i as __toESM } from "../_runtime.mjs";
 import { J as require_react, q as require_jsx_runtime } from "../_libs/@tanstack/react-router+[...].mjs";
 import { o as Menu, t as X } from "../_libs/lucide-react.mjs";
-//#region node_modules/.nitro/vite/services/ssr/assets/site-header-Cma7Ja4j.js
+//#region node_modules/.nitro/vite/services/ssr/assets/site-header-69vo0U8O.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
 var RDV = "https://www.doctolib.fr/dieteticien/metz/valentin-diamantini/booking/specialities";
@@ -465,6 +465,8 @@ function SiteHeader() {
 						onClick: () => setOpen(false),
 						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
 							src: "/media/diamantini-nutrition-logo.webp",
+							srcSet: "/media/diamantini-nutrition-logo-160.webp 160w, /media/diamantini-nutrition-logo-320.webp 320w, /media/diamantini-nutrition-logo-640.webp 640w",
+							sizes: "(min-width: 768px) 102px, 87px",
 							alt: "Diamantini Nutrition",
 							width: 1270,
 							height: 700,

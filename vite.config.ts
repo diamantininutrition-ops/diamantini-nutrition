@@ -172,7 +172,13 @@ export default defineConfig(({ command, isPreview }) => ({
         crawlLinks: true,
         // Hash links (/#contact, /#avis…) resolve to / and were written
         // concurrently onto index.html, sometimes leaving it empty.
-        filter: ({ path }) => !/[?#]/.test(path),
+        filter: ({ path }) => {
+          if (/[?#]/.test(path)) return false;
+          const bare = path.replace(/\/$/, "");
+          // Static HTML in public/ must stay the GitHub Pages redirect.
+          if (bare === "/mentionslegales" || bare === "/politiquedeconfidentialite") return false;
+          return true;
+        },
       },
       pages: [
         { path: "/" },

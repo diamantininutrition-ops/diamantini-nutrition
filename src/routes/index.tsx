@@ -29,7 +29,11 @@ const cabinet = {
     addressLocality: "Metz",
     addressCountry: "FR",
   },
-  areaServed: "Metz",
+  areaServed: [
+    { "@type": "City", name: "Metz" },
+    { "@type": "AdministrativeArea", name: "Moselle" },
+    { "@type": "AdministrativeArea", name: "Grand Est" },
+  ],
   sameAs: [
     "https://www.doctolib.fr/dieteticien/metz/valentin-diamantini",
     "https://www.strongdiet-nutrition.com/",
